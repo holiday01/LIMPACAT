@@ -10,13 +10,10 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-&& curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
-&& curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-# 更新 apt repository 並安裝 NVIDIA Container Toolkit
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 sudo apt-get update
-sudo apt-get install -y nvidia-container-toolkit
-
-# 重新啟動 Docker 以使更改生效
+sudo apt-get install nvidia-docker2
+sudo systemctl restart docker.service
 sudo systemctl restart docker
