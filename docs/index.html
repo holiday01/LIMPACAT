@@ -108,22 +108,23 @@
             <li>
                 <h3>Step 2: Analyze Immune Cell Composition from Gene Expression Data</h3>
                 <p>Navigate to the project directory and use the following command to analyze the immune cell composition from gene expression data:</p>
-                <code>python analyze_composition.py --input gene_expression_data.txt</code>
+                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=CCD limpacat</code>
                 <p><strong>Example Usage:</strong> Use <code>--input</code> to specify your gene expression data file. Additional parameters such as <code>--method</code> and <code>--threshold</code> allow for personalized analysis.</p>
             </li>
             
             <li>
                 <h3>Step 3: Perform Survival Analysis Based on Cell Composition</h3>
                 <p>Run the following command to analyze survival based on cell composition:</p>
-                <code>python survival_analysis.py --composition cell_composition_data.txt</code>
+                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=SUR limpacat</code>
                 <p><strong>Example Usage:</strong> Use <code>--composition</code> to specify the file with cell composition data. You can also customize analysis with parameters like <code>--model</code> and <code>--timeframe</code> to adjust the survival analysis model.</p>
             </li>
             
             <li>
                 <h3>Step 4: Prepare Image Data for Training</h3>
                 <p>Execute the command below to create the necessary image data for training:</p>
-                <code>python prepare_image_data.py --input image_folder/ --output training_data/</code>
+                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat</code>
                 <p><strong>Example Usage:</strong> Use <code>--input</code> for the folder containing raw images and <code>--output</code> for specifying where the processed data will be saved. Adjust other parameters, such as <code>--resize</code> and <code>--format</code>, for custom preprocessing.</p>
+                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat  -c=Monocyte</code>
             </li>
             
             <li>
