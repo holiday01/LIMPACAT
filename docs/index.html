@@ -105,25 +105,42 @@
                 <p>Pull docker file:</p>
                 <code>docker pull yenjungchiu/limpacat</code>
             </li>
+            
             <li>
                 <h3>Step 2: Analyze Immune Cell Composition from Gene Expression Data</h3>
-                <p>Navigate to the project directory and use the following command to analyze the immune cell composition from gene expression data:</p>
-                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=CCD limpacat</code>
-                <p><strong>Example Usage:</strong> Use <code>--input</code> to specify your gene expression data file. Additional parameters such as <code>--method</code> and <code>--threshold</code> allow for personalized analysis.</p>
+                <p>Navigate to the project directory and use the following command to analyze the immune cell composition from a gene expression file in the current directory:</p>
+                <code>python analyze_composition.py -f gene_expression_data.txt -o composition_output.txt</code>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li><code>-f FILE</code> or <code>--file FILE</code>: Specifies the input gene expression file located in the current directory.</li>
+                    <li><code>-o OUTPUT</code> or <code>--output OUTPUT</code>: Specifies the name of the output file where the immune cell composition results will be saved.</li>
+                </ul>
+                <p><strong>Example Usage:</strong> In the example above, <code>gene_expression_data.txt</code> is the input file in the current directory, and <code>composition_output.txt</code> is the file where the analysis results will be saved.</p>
             </li>
+
             
             <li>
                 <h3>Step 3: Perform Survival Analysis Based on Cell Composition</h3>
                 <p>Run the following command to analyze survival based on cell composition:</p>
-                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=SUR limpacat</code>
-                <p><strong>Example Usage:</strong> Use <code>--composition</code> to specify the file with cell composition data. You can also customize analysis with parameters like <code>--model</code> and <code>--timeframe</code> to adjust the survival analysis model.</p>
+                <code>python survival_analysis.py -f cell_composition_data.txt</code>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li><code>-f FILE</code> or <code>--file FILE</code>: Specifies the input file containing cell composition data, located in the current directory.</li>
+                </ul>
+                <p><strong>Example Usage:</strong> In the example above, <code>cell_composition_data.txt</code> is the input file in the current directory that contains the necessary data for survival analysis.</p>
             </li>
+
             
             <li>
                 <h3>Step 4: Prepare Image Data for Training</h3>
-                <p>Execute the command below to create the necessary image data for training:</p>
-                <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat</code>
-                <p><strong>Example Usage:</strong> Use <code>--input</code> for the folder containing raw images and <code>--output</code> for specifying where the processed data will be saved. Adjust other parameters, such as <code>--resize</code> and <code>--format</code>, for custom preprocessing.</p>
+                <p>Execute the command below to create the necessary image data for training based on cell type composition:</p>
+                <code>python prepare_image_data.py -f image_data_source.txt -c Monocyte</code>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li><code>-f FILE</code> or <code>--file FILE</code>: Specifies the input file containing the image data source, located in the current directory.</li>
+                    <li><code>-c CELL_TYPE</code> or <code>--cell_type CELL_TYPE</code>: Specifies the cell type to use for training data preparation. Example values include <code>Monocyte</code>, as used in Step 3.</li>
+                </ul>
+                <p><strong>Example Usage:</strong> In the example above, <code>image_data_source.txt</code> is the input file containing the source image data, and <code>Monocyte</code> is the specified cell type for training data preparation.</p>
                 <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat  -c=Monocyte</code>
             </li>
             
