@@ -150,10 +150,19 @@ This model enables researchers and clinicians to leverage WSI data for immune pr
             
             <li>
                 <h3>Step 5: Train WSI Images for Immune Cell Content Prediction</h3>
-                <p>Train the model on Whole Slide Images (WSI) to predict high and low immune cell content associated with survival:</p>
-                <code>python train_model.py --training_data training_data/ --validation_data validation_data/</code>
-                <p><strong>Example Usage:</strong> Use <code>--training_data</code> and <code>--validation_data</code> for specifying the directories with training and validation images, respectively. Parameters like <code>--epochs</code> and <code>--batch_size</code> allow fine-tuning of the training process.</p>
+                <p>Train the model on Whole Slide Images (WSI) to predict immune cell content associated with survival. Use the following command to start training:</p>
+                <code>python train_model.py --dataset_json dataset_config.json --epochs 50 --batch_size 16 --logdir logs/</code>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li><code>--dataset_json DATASET_JSON</code>: Specifies the path to the dataset configuration JSON file, which defines the dataset structure and WSI images to use for training.</li>
+                    <li><code>--epochs EPOCHS</code> or <code>--max_epochs EPOCHS</code>: Sets the number of training epochs. More epochs generally improve model accuracy but increase training time.</li>
+                    <li><code>--batch_size BATCH_SIZE</code>: Defines the number of WSI images per batch (per GPU) during training, which impacts memory usage and training speed.</li>
+                    <li><code>--validate</code>: Runs inference only on the validation set. Requires the <code>--checkpoint</code> argument to specify an existing checkpoint for loading.</li>
+                    <li><code>--logdir LOGDIR</code>: Specifies the directory path to save training logs for TensorBoard, allowing you to monitor training metrics visually.</li>
+                </ul>
+                <p><strong>Example Usage:</strong> In the example command above, <code>dataset_config.json</code> is the dataset configuration file, <code>50</code> epochs are set for training, <code>16</code> is the batch size, and training logs are saved in the <code>logs/</code> directory.</p>
             </li>
+
 
         </ul>
 
