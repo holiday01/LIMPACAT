@@ -3,17 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Website</title>
+    <title>Software Tutorial</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { text-align: center; margin-top: 50px; }
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #4CAF50;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 5px;
+            font-size: 1em;
+        }
+
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .steps h3 {
+            margin-top: 0;
+            font-size: 1.25em;
+            color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+            color: #555;
+            border-top: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Software Tutorial</h1>
+        <p>Your Guide to Getting Started</p>
+    </header>
+
     <div class="container">
-        <h1>Welcome to My GitHub Pages Website</h1>
-        <p>This is a simple website hosted on GitHub Pages!</p>
-        <p>Explore my content and enjoy your stay.</p>
+        <h2>Introduction</h2>
+        <p>Welcome to the tutorial! This document will guide you through the steps to set up and use our software. Follow each section carefully for best results.</p>
+
+        <h2>Requirements</h2>
+        <p>Before starting, make sure you have the following installed:</p>
+        <ul>
+            <li>Operating System: Windows, macOS, or Linux</li>
+            <li>Required Software: Python, Docker, and Git</li>
+            <li>Internet connection</li>
+        </ul>
+
+        <h2>Setup Instructions</h2>
+        <ul class="steps">
+            <li>
+                <h3>Step 1: Download the Software</h3>
+                <p>Clone the repository from GitHub:</p>
+                <code>git clone https://github.com/username/repository.git</code>
+            </li>
+            <li>
+                <h3>Step 2: Install Dependencies</h3>
+                <p>Navigate to the project directory and install the required packages:</p>
+                <code>pip install -r requirements.txt</code>
+            </li>
+            <li>
+                <h3>Step 3: Run the Software</h3>
+                <p>Execute the following command to start the software:</p>
+                <code>python main.py</code>
+            </li>
+            <li>
+                <h3>Step 4: Verify Installation</h3>
+                <p>Ensure everything is working by running the verification tests:</p>
+                <code>python test.py</code>
+            </li>
+        </ul>
+
+        <h2>Troubleshooting</h2>
+        <p>If you encounter any issues, refer to the <a href="https://github.com/username/repository/issues">GitHub Issues page</a> for support or submit a new issue.</p>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
