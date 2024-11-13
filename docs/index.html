@@ -151,7 +151,7 @@ This model enables researchers and clinicians to leverage WSI data for immune pr
             <li>
                 <h3>Step 5: Train WSI Images for Immune Cell Content Prediction</h3>
                 <p>Train the model on Whole Slide Images (WSI) to predict immune cell content associated with survival. Use the following command to start training:</p>
-                <code>python train_model.py --dataset_json dataset_config.json --epochs 50 --batch_size 16 --logdir logs/</code>
+                <code>sudo docker run --rm --gpus all -v /image:/app/image -v .:/app/output -e SCRIPT_ALIAS=LIMPACAT limpacat</code>
                 <p><strong>Parameters:</strong></p>
                 <ul>
                     <li><code>--dataset_json DATASET_JSON</code>: Specifies the path to the dataset configuration JSON file, which defines the dataset structure and WSI images to use for training.</li>
