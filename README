@@ -32,5 +32,46 @@ Ensure the following software is installed:
 
 ### Step 1: Download the Software 🐋
 Pull the Docker image for LIMPACAT:
-```bash
+```
 docker pull yenjungchiu/limpacat
+```
+
+### Step 2: Analyze Immune Cell Composition 🧬
+
+This section guides you through analyzing immune cell composition from gene expression data using the **LIMPACAT** Docker image. Follow the steps below to get started.
+
+### Command
+Navigate to your project directory and run the following command:
+```
+docker run --rm -v .:/app/output -e SCRIPT_ALIAS=CCD limpacat
+```
+
+### Step 3: Perform Survival Analysis 📊
+
+This step describes how to perform a survival analysis based on immune cell composition data using **LIMPACAT**.
+
+### Command
+In your project directory, use the following command:
+```
+docker run --rm -v .:/app/output -e SCRIPT_ALIAS=SUR limpacat
+```
+
+### Step 4: Prepare Image Data for Training 🖼️
+
+This step will guide you in preparing image data for training based on cell type composition using **LIMPACAT**.
+
+### Command
+To create the necessary image data for training, run:
+```
+docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat -f image_data_source.txt -c Monocyte
+```
+
+### Step 5: Train WSI Images for Immune Cell Content Prediction 📈
+
+This step will walk you through training the model on Whole Slide Images (WSI) to predict immune cell content using **LIMPACAT**.
+
+### Command
+Use the following command to initiate training on WSI images:
+```
+docker run --rm --gpus all -v /data/liver_image_all:/app/image -v ./test:/app/output -e SCRIPT_ALIAS=LIMPACAT limpacat
+```
