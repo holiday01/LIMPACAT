@@ -1,4 +1,8 @@
-| ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) | ![LIMPACAT Documentation](https://img.shields.io/badge/LIMPACAT-documentation-brightgreen.svg?longCache=true) | ![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg) |
+<div align="center">
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/LIMPACAT-documentation-brightgreen.svg?longCache=true" alt="LIMPACAT Documentation">
+  <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code Style">
+</div>
 
 # LIMPACAT
 
