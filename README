@@ -1,141 +1,34 @@
-| License |  | Documentation |  | Format |
+| ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) | ![LIMPACAT Documentation](https://img.shields.io/badge/LIMPACAT-documentation-brightgreen.svg?longCache=true) | ![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg) |
 
-LIMPACAT
-========
-.. overview-begin-marker-do-not-remove
+# LIMPACAT
 
-The Liver Immune Prediction Attention Transformer (LIMPACAT) is a deep learning model
-specifically developed to predict immune cell composition in liver cancer. By leveraging
-multi-omics data and whole-slide imaging (WSI), LIMPACAT offers a GPU-accelerated solution
-that allows researchers and clinicians to enhance precision in liver cancer treatment.
-The model uses advanced transformer-based attention mechanisms to accurately analyze
-immune cell patterns, providing a powerful tool for personalized treatment strategies.
+The **Liver Immune Prediction Attention Transformer (LIMPACAT)** is a deep learning model specifically designed to predict immune cell composition in liver cancer. By leveraging **multi-omics data** and **whole-slide imaging (WSI)**, LIMPACAT provides a GPU-accelerated solution that enhances precision in liver cancer treatment. The model uses advanced transformer-based attention mechanisms to analyze immune cell patterns, aiding personalized treatment strategies.
 
-LIMPACAT integrates complex data processing workflows, including WSI-based cell composition
-detection, gene expression analysis, and survival analysis, into a single, streamlined model.
-Using Docker and GPU capabilities, LIMPACAT handles multi-stage preprocessing on a single pipeline,
-increasing training and inference scalability.
+Deep learning applications require complex, multi-stage data processing pipelines, including WSI-based cell composition detection, gene expression analysis, and survival analysis. These tasks are usually handled on the CPU, which can become a bottleneck in processing. LIMPACAT addresses this issue by utilizing GPU acceleration and Docker, offering efficient training and inference workflows.
 
-LIMPACAT allows for a configurable input structure, supporting varied cell types, data specifications,
-and training parameters, making it suitable for a range of liver cancer studies.
+---
 
-.. image:: /limpacat.png
-    :width: 800
-    :align: center
-    :alt: LIMPACAT Diagram
+LIMPACAT allows for a configurable input structure, supporting various cell types, data specifications, and training parameters, making it suitable for a range of liver cancer studies.
 
-LIMPACAT in action:
+![LIMPACAT Diagram](https://via.placeholder.com/800x400.png?text=LIMPACAT+Diagram)
 
-.. code-block:: python
+## LIMPACAT in Action
 
-  import os
-  from limpacat.pipeline import initialize_pipeline, analyze_immune_cells, survival_analysis, train_model
+```python
+import os
+from limpacat.pipeline import initialize_pipeline, analyze_immune_cells, survival_analysis, train_model
 
-  data_root_dir = os.environ['LIMPACAT_DATA_PATH']
-  images_dir = os.path.join(data_root_dir, 'images')
+data_root_dir = os.environ['LIMPACAT_DATA_PATH']
+images_dir = os.path.join(data_root_dir, 'images')
 
-  # Load and initialize pipeline
-  pipeline = initialize_pipeline(images_dir, model_config='config.yaml')
+# Load and initialize pipeline
+pipeline = initialize_pipeline(images_dir, model_config='config.yaml')
 
-  # Analyze immune cell composition
-  immune_data = analyze_immune_cells(pipeline)
+# Analyze immune cell composition
+immune_data = analyze_immune_cells(pipeline)
 
-  # Perform survival analysis
-  survival_data = survival_analysis(immune_data)
+# Perform survival analysis
+survival_data = survival_analysis(immune_data)
 
-  # Train model on WSI images
-  train_results = train_model(pipeline, immune_data)
-
-Highlights
-----------
-- Easy-to-use functional style Python API.
-- Supports multi-omics data and whole-slide imaging.
-- Transformer-based attention mechanism for detailed immune cell pattern analysis.
-- Portable across popular deep learning frameworks: TensorFlow, PyTorch, PaddlePaddle.
-- Supports GPU execution and efficient memory handling.
-- Extensible for user-specific needs with custom operators.
-- Integrated data processing pipelines for image classification, immune analysis, and survival modeling.
-- Flexible graphs for custom pipelines.
-- Scalable across multiple GPUs.
-
-.. overview-end-marker-do-not-remove
-
-----
-
-LIMPACAT success stories:
--------------------------
-
-- `Liver Cancer Immune Profiling <https://example-link.com>`__: "LIMPACAT helped us achieve unprecedented precision in liver cancer immune profiling."
-- `Advanced Liver Cancer Research Institute <https://example-link.com>`__: "With LIMPACAT, we identified critical immune cell patterns associated with patient survival."
-- `Deep Learning in Hepatology <https://example-link.com>`__: "LIMPACAT's scalability and portability make it an ideal solution for liver cancer studies across research centers."
-
-----
-
-LIMPACAT Roadmap
-----------------
-
-`Our 2024 roadmap <https://github.com/limpacat/limpacat/issues/100>`__ provides an overview of planned improvements, including expanded model support for additional cancer types, increased GPU optimization, and advanced multi-modal data handling. This roadmap may be updated periodically based on feedback.
-
-----
-
-Installing LIMPACAT
--------------------
-
-To install LIMPACAT with Docker::
-
-    docker pull yenjungchiu/limpacat
-
-For detailed installation and setup instructions, please refer to the `Installation Guide <https://docs.limpacat.com/installation.html>`__.
-
-----
-
-Examples and Tutorials
-----------------------
-
-An introduction to LIMPACAT can be found in the `Getting Started <https://docs.limpacat.com/getting-started.html>`__ page.
-
-More advanced examples can be found in the `Examples and Tutorials <https://docs.limpacat.com/examples.html>`__ page.
-
-**Note:** Refer to the `Latest Release Documentation <https://docs.limpacat.com/latest>`__ or the `Nightly Release Documentation <https://docs.limpacat.com/nightly>`__, depending on your version.
-
-----
-
-Additional Resources
---------------------
-
-- **Conference Presentation 2024**; **Enhancing Liver Cancer Immunotherapy with LIMPACAT**:
-  `event <https://www.example.com/limpacat-conference>`__.
-- **Journal of Cancer Immunotherapy**; **LIMPACAT: An Immune Prediction Model for Liver Cancer**:
-  `paper <https://www.example.com/limpacat-journal-paper>`__.
-
-----
-
-Contributing to LIMPACAT
-------------------------
-
-We welcome contributions to LIMPACAT. To contribute, follow the guidelines outlined in the `Contributing <https://github.com/limpacat/limpacat/blob/main/CONTRIBUTING.md>`__ document.
-
-For tasks labeled as `external contribution welcome <https://github.com/limpacat/limpacat/labels/external%20contribution%20welcome>`__, please see GitHub issues with this label.
-
-Reporting Problems, Asking Questions
-------------------------------------
-
-For questions or bug reports, refer to our guidelines on `Stack Overflow <https://stackoverflow.com/help/mcve>`__:
-
-- **Minimal**: Provide as little code as possible to reproduce the issue.
-- **Complete**: Ensure all parts needed to reproduce the problem are included.
-- **Verifiable**: Test the code to confirm it reproduces the problem.
-
-Acknowledgements
-----------------
-
-LIMPACAT was developed with contributions from leading experts in oncology and AI research.
-
-.. |License| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
-   :target: https://opensource.org/licenses/Apache-2.0
-
-.. |Documentation| image:: https://img.shields.io/badge/LIMPACAT-documentation-brightgreen.svg?longCache=true
-   :target: https://docs.limpacat.com
-
-.. |Format| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
+# Train model on WSI images
+train_results = train_model(pipeline, immune_data)
