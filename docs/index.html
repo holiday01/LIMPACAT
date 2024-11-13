@@ -157,44 +157,7 @@ This model enables researchers and clinicians to leverage WSI data for immune pr
                     <li><code>--epochs EPOCHS</code> or <code>--max_epochs EPOCHS</code>: Sets the number of training epochs. Higher values can increase accuracy but also extend training time. Default is usually 100 epochs.</li>
                     <li><code>--dataset_json DATASET_JSON</code>: Path to the dataset configuration JSON file. This file should specify details about the dataset, including paths to WSI images, labels, and other metadata.</li>
                     <li><code>--batch_size BATCH_SIZE</code>: Number of WSI images per batch, per GPU. This impacts memory usage and training efficiency. Typical values depend on GPU capacity.</li>
-                    <li><code>--validate</code>: Runs only inference on the validation set. Must specify the <code>--checkpoint</code> argument to load a pre-trained model for validation.</li>
-                    <li><code>--logdir LOGDIR</code>: Path to the directory where training logs and TensorBoard logs will be saved. These logs are useful for monitoring training progress and validation metrics.</li>
-                </ul>
-            
-                <p><strong>Example Commands:</strong></p>
-                <p>Here are example commands for training and validation:</p>
-                
-                <pre><code>
-            # Training with specific parameters
-            CUDA_VISIBLE_DEVICES=0 nohup python -u panda_mil_train_evaluate_pytorch_gpu.py \
-                --data_root=/data/liver_image_all \
-                --amp \
-                --workers=0 \
-                --tile_size=224 \
-                --epochs=100 \
-                --dataset_json=/home/mcubmeaiserver1/monai/log_B_cell_svs.json \
-                --mil_mode=att_trans \
-                --logdir=./b_cell/tran_att_logs > ./b_cell/tran_att_logs.log 2>&1 &
-            
-            # Validation with pre-trained model
-            python -u panda_mil_train_evaluate_pytorch_gpu.py \
-                --data_root=/data/liver_image_all \
-                --mil_mode=att_trans \
-                --dataset_json=/home/mcubmeaiserver1/monai/log_B_cell_svs.json \
-                --amp \
-                --workers=0 \
-                --tile_size=224 \
-                --checkpoint=./b_cell/tran_att_logs/model.pt \
-                --validate
-                </code></pre>
-            
-                <p><strong>Explanation of Example Commands:</strong></p>
-                <ul>
                     <li><code>CUDA_VISIBLE_DEVICES=0</code>: Specifies the GPU device ID to use for training (in this case, GPU 0).</li>
-                    <li><code>--data_root</code>: Path to the root folder containing all images for training and validation.</li>
-                    <li><code>--amp</code>: Enables Automatic Mixed Precision (AMP) to reduce memory usage and speed up training.</li>
-                    <li><code>--tile_size</code>: Sets the size (in pixels) of the square patch to extract from WSI images.</li>
-                    <li><code>--mil_mode</code>: Specifies the MIL (Multiple Instance Learning) algorithm mode, such as <code>att_trans</code> for attention transformer.</li>
                     <li><code>--checkpoint</code>: Path to the model checkpoint file. Used during validation to load an existing trained model.</li>
                     <li><code>--validate</code>: Runs inference on the validation set only.</li>
                 </ul>
