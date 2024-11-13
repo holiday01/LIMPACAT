@@ -1,0 +1,36 @@
+# LIMPACAT Tutorial 🚀
+
+Welcome to the **LIMPACAT (Liver Immune Prediction Attention Transformer)** tutorial! This guide will walk you through the setup, usage, and features of LIMPACAT – a deep learning model designed to predict immune cell composition in liver cancer using multi-omics data and whole-slide imaging (WSI). 🎨🧬
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Setup Instructions](#setup-instructions)
+- [Usage](#usage)
+  - [Step 1: Download the Software](#step-1-download-the-software)
+  - [Step 2: Analyze Immune Cell Composition](#step-2-analyze-immune-cell-composition)
+  - [Step 3: Perform Survival Analysis](#step-3-perform-survival-analysis)
+  - [Step 4: Prepare Image Data for Training](#step-4-prepare-image-data-for-training)
+  - [Step 5: Train WSI Images for Prediction](#step-5-train-wsi-images-for-prediction)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+
+---
+
+## Introduction
+
+LIMPACAT (Liver Immune Prediction Attention Transformer) combines **whole-slide imaging** and **multi-omics analysis** with a **transformer-based attention mechanism**. It focuses on detecting relevant immune cell patterns, aiding personalized liver cancer treatment strategies. The model allows for configurable parameters in **input data**, **cell type specification**, and **training**.
+
+## Requirements 📋
+Ensure the following software is installed:
+- **Operating Systems**: Windows, macOS, or Linux
+- **Software**: Python, Conda, Docker, Git
+
+---
+
+## Setup Instructions
+
+### Step 1: Download the Software 🐋
+Pull the Docker image for LIMPACAT:
+```bash
+docker pull yenjungchiu/limpacat
