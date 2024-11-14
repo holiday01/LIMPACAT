@@ -1,6 +1,6 @@
 # LIMPACAT Tutorial 🚀
 
-Welcome to the **LIMPACAT (Liver Immune Prediction Attention Transformer)** tutorial! This guide will walk you through the setup, usage, and features of LIMPACAT – a deep learning model designed to predict immune cell composition in liver cancer using multi-omics data and whole-slide imaging (WSI). 🎨🧬
+Welcome to the **LIMPACAT (Liver Immune Microenvironment Prediction and Classification Attention Transformer)** tutorial! This guide will walk you through the setup, usage, and features of LIMPACAT – a deep learning model designed to predict immune cell composition in liver cancer using multi-omics data and whole-slide imaging (WSI). 🎨🧬
 
 ## Table of Contents
 - [Introduction](#introduction)
