@@ -158,10 +158,14 @@ This model enables researchers and clinicians to leverage WSI data for immune pr
                     <li><code>--epochs EPOCHS</code> or <code>--max_epochs EPOCHS</code>: Sets the number of training epochs. Higher values can increase accuracy but also extend training time. Default is usually 100 epochs.</li>
                     <li><code>--dataset_json DATASET_JSON</code>: Path to the dataset configuration JSON file. This file should specify details about the dataset, including paths to WSI images, labels, and other metadata.</li>
                     <li><code>--batch_size BATCH_SIZE</code>: Number of WSI images per batch, per GPU. This impacts memory usage and training efficiency. Typical values depend on GPU capacity.</li>
-                    <li><code>CUDA_VISIBLE_DEVICES=0</code>: Specifies the GPU device ID to use for training (in this case, GPU 0).</li>
                     <li><code>--checkpoint</code>: Path to the model checkpoint file. Used during validation to load an existing trained model.</li>
                     <li><code>--validate</code>: Runs inference on the validation set only.</li>
                 </ul>
+                <p><strong>Example Usage:</strong> In the example above, <code>JSON FILE</code> is the input file in the current directory that contains the necessary data for model training, and the default is b cell.</p>
+                <code>docker run --rm --gpus all -v /data/liver_image_all:/app/image -v ./test:/app/output -e SCRIPT_ALIAS=LIMPACAT limpacat</code>
+                <code>docker run --rm --gpus all -v /data/liver_image_all:/app/image -v ./test:/app/output -e SCRIPT_ALIAS=LIMPACAT limpacat --dataset_json=log_Monocyte_svs.json</code>
+                <p> For the validation</p>
+                <code>docker run --rm --gpus all -v /data/liver_image_all:/app/image -v ./test:/app/output -e SCRIPT_ALIAS=LIMPACAT limpacat --validate</code>
             </li>
 
 
