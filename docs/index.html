@@ -144,7 +144,7 @@ This model enables researchers and clinicians to leverage WSI data for immune pr
                     <li><code>-f FILE</code> or <code>--file FILE</code>: Specifies the input file containing the image data source, located in the current directory.</li>
                     <li><code>-c CELL_TYPE</code> or <code>--cell_type CELL_TYPE</code>: Specifies the cell type to use for training data preparation. Example values include <code>Monocyte</code>, as used in Step 3.</li>
                 </ul>
-                <p><strong>Example Usage:</strong> In the example above, <code>image_data_source.txt</code> is the input file containing the source image data, and <code>Monocyte</code> is the specified cell type for training data preparation.</p>
+                <p><strong>Example Usage:</strong> In the example above, <code>proportion.csv</code> is the input file containing the source image data, and <code>Monocyte</code> is the specified cell type for training data preparation.</p>
                 <code>sudo docker run --rm -v .:/app/output -e SCRIPT_ALIAS=IMG_JSON limpacat  -c=Monocyte</code>
             </li>
             
