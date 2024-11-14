@@ -34,6 +34,11 @@ The data required for testing comes from the **TCGA LIHC dataset** on the **GDC 
 
 ---
 
+### Full Documentation
+
+For more detailed documentation, including parameter settings and advanced configurations, please visit the [LIMPACAT Documentation Site](https://holiday01.github.io/LIMPACAT/).
+
+
 ## Setup Instructions
 
 ### Step 1: Download the Software 🐋
