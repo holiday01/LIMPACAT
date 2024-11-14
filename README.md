@@ -28,6 +28,12 @@ Ensure the following software is installed:
 
 ---
 
+### Data Download
+
+The data required for testing comes from the **TCGA LIHC dataset** on the **GDC portal**. Due to the large size of the dataset, it cannot be provided directly. Please download the dataset yourself for testing purposes from the [GDC portal](https://portal.gdc.cancer.gov/).
+
+---
+
 ## Setup Instructions
 
 ### Step 1: Download the Software 🐋
