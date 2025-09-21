@@ -6,6 +6,7 @@ CCD Model: Cell type deconvolution from bulk RNA-seq data
 LIMPACAT Model: Whole Slide Image (WSI) analysis for immune cell abundance prediction
 
 Repository Structure
+```
 .
 ├── CCD/
 │   ├── deconvolution.py
@@ -35,6 +36,8 @@ Repository Structure
 │   └── run.sh
 └── lihc_fraction/
     └── lihc_fraction.csv
+```
+
 CCD Model - Cell Type Deconvolution
 Workflow
 
