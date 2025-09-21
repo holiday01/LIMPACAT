@@ -61,8 +61,12 @@ Classification: Assigns binary labels (0/1) based on immune cell abundance thres
 
 
 Usage
+```
 bashcd CCD
 python deconvolution.py
+```
+
+
 LIMPACAT Model - WSI Analysis
 Overview
 LIMPACAT analyzes Whole Slide Images to predict immune cell infiltration levels in LIHC samples.
@@ -84,8 +88,10 @@ mo.pt: Monocyte model
 nk.pt: NK cell model
 
 Execution
-bashcd WSI
+```
+cd WSI
 bash run.sh
+```
 Output
 Results are saved to WSI/result/hcc_immune_level.csv:
 
